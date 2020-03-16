@@ -1,0 +1,15 @@
+version="1.9.0"
+tags={
+	"Alternative History"
+	"Map"
+	"Military"
+	"National Focuses"
+	"Gameplay"
+	"Graphics"
+	"Ideologies"
+	"Historical"
+	"Events"
+	"Technologies"
+}
+name="Vive Le Roi"
+supported_version="1.9.0"
