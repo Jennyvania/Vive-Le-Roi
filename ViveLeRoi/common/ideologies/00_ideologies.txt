@@ -20,7 +20,7 @@ ideologies = {
 			"FACTION_NAME_DEMOCRATIC_6"
 		}
 		
-		color = { 57 73 146 }
+		color = { 56 56 56 }
 		
 		rules = {
 			can_force_government = no
@@ -47,7 +47,7 @@ ideologies = {
 		faction_modifiers = {
 			faction_trade_opinion_factor = 0.50 #plus 50% trade opinion
 		}
-		ai_democratic = yes # uses the democratic AI behaviour
+		ai_fascist = yes 
 	}
 
 	national_conservative = {
@@ -70,7 +70,7 @@ ideologies = {
 			"FACTION_NAME_DEMOCRATIC_6"
 		}
 		
-		color = { 57 73 146 }
+		color = { 48 51 103 }
 		
 		rules = {
 			can_force_government = no
@@ -97,7 +97,7 @@ ideologies = {
 		faction_modifiers = {
 			faction_trade_opinion_factor = 0.50 #plus 50% trade opinion
 		}
-		ai_democratic = yes # uses the democratic AI behaviour
+		ai_fascist = yes
 	}
 	
 	social_conservative = {
@@ -276,7 +276,7 @@ ideologies = {
 			"FACTION_NAME_DEMOCRATIC_6"
 		}
 		
-		color = { 85 181  192 }
+		color = { 182 97 117 }
 		
 		rules = {
 			can_force_government = no
@@ -303,7 +303,7 @@ ideologies = {
 		faction_modifiers = {
 			faction_trade_opinion_factor = 0.50 #plus 50% trade opinion
 		}
-		ai_democratic = yes # uses the democratic AI behaviour
+		ai_communist = yes
 	}
 	
 	communist = {
@@ -329,7 +329,7 @@ ideologies = {
 			"FACTION_NAME_DEMOCRATIC_6"
 		}
 		
-		color = { 85 181  192 }
+		color = { 231 80 80 }
 		
 		rules = {
 			can_force_government = no
@@ -356,6 +356,6 @@ ideologies = {
 		faction_modifiers = {
 			faction_trade_opinion_factor = 0.50 #plus 50% trade opinion
 		}
-		ai_democratic = yes # uses the democratic AI behaviour
+		ai_communist = yes
 	}
 }
