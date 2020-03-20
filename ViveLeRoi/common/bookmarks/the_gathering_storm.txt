@@ -11,6 +11,9 @@ bookmarks = {
 			history = "FRA_GATHERING_STORM_DESC"
 			ideology = populist
 			ideas = {
+				FRA_worker_shortage
+				FRA_great_depression_1
+				FRA_inflation_crisis
 			}
 			focuses = {
 			}

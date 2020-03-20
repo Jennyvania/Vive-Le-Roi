@@ -79,7 +79,6 @@ if = {
 		basic_heavy_armor_scheme = 1
 		mtg_transport = 1
 	}
-	add_ideas = MTG_naval_treaty_adherent
 }
 if = {
 	limit = {
@@ -233,6 +232,10 @@ set_popularities = {
 }
 
 add_ideas = {
+	FRA_worker_shortage
+	FRA_great_depression_1
+	FRA_inflation_crisis
+	FRA_king_of_the_french
 }
 
 create_country_leader = {
