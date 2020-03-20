@@ -6,6 +6,9 @@ ideologies = {
 			
 			monarchist = {
 			}
+			
+			totalitarian = {
+			}
 		
 			authoritarian_democrat = {
 			}
@@ -203,7 +206,7 @@ ideologies = {
 		ai_democratic = yes # uses the democratic AI behaviour
 	}
 	
-	social_liberalism = {
+	social_liberal = {
 	
 		types = {
 			

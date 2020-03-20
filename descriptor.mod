@@ -13,3 +13,4 @@ tags={
 }
 name="Vive Le Roi"
 supported_version="1.9.0"
+path="mod/viveleroi/"
