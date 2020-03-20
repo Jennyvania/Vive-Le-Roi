@@ -273,8 +273,8 @@ create_country_leader = {
 
 create_country_leader = {
 	name = "André Tardieu"
-	desc = "POLITICS_ANDREW_TARDIEU_DESC"
-	picture = "Portrait_France_Andrew_Tardieu.dds"
+	desc = "POLITICS_ANDRE_TARDIEU_DESC"
+	picture = "Portrait_France_Andre_Tardieu.dds"
 	expire = "1965.1.1"
 	ideology = centre_populist
 	traits = {
@@ -301,6 +301,7 @@ create_country_leader = {
 	ideology = democratic_socialist
 	traits = {
 		stout_defender
+		economic_reformer
 	}
 }
 

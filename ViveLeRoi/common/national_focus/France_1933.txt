@@ -8,6 +8,84 @@ focus_tree = {
 		}
 	}
 	continuous_focus_position = { x = 50 y = 1600 }
+
+	#Focus for The February Crisis
+	focus = {
+		id = FRA_thefebruarycrisis
+		icon = GFX_focus_rom_handle_king
+		x = 16
+		y = 0
+		cost = 1
+		available_if_capitulated = yes
+		available = {
+			has_country_flag = FRA_februarycrisis
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	#Focus for Emergency Elections
+	focus = {
+		id = FRA_emergencyelections
+		icon = GFX_focus_generic_the_giant_wakes
+		x = 16
+		y = 1
+		cost = 1
+		available_if_capitulated = yes
+		prerequisite = { focus = FRA_thefebruarycrisis }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	#######################
+	###CONSERVATIVE PATH###
+	#######################
+	
+	#Focus for Louis Marin!
+	focus = {
+		id = FRA_louismarin
+		icon = GFX_focus_mex_restore_the_army_of_christ
+		x = 8
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = FRA_emergencyelections }
+		mutually_exclusive = { 
+			focus = FRA_douarddaladier 
+			focus = FRA_douardherriot 
+		}
+		available = {
+			has_country_flag = FRA_conservativecoalition
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_politics = {
+				ruling_party = social_conservative
+				elections_allowed = yes
+				last_election = 1930.5.1
+				election_frequency = 60
+			}
+		}
+	}
+
+	#Focus for Renew the Constitution...
+	focus = {
+		id = FRA_renewtheconstitution
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 8
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = FRA_louismarin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
 	#Focus for Unity Through Strength!
 	focus = {
 		id = FRA_unitythroughstrength
@@ -24,79 +102,56 @@ focus_tree = {
 		}
 	}
 
-	#Focus for ...is with Thorez
+	#Focus for Vive la France
 	focus = {
-		id = FRA_iswiththorez
-		icon = GFX_goal_support_fourth_int
-		x = 31
-		y = 4
+		id = FRA_vivelafrance
+		icon = GFX_focus_chi_reach_out_to_france
+		x = 8
+		y = 5
 		cost = 10
 		available_if_capitulated = yes
-		prerequisite = { focus = FRA_thefutureoffrance }
-		mutually_exclusive = { focus = FRA_iswithblum }
+		prerequisite = { focus = FRA_unitythroughstrength }
 		ai_will_do = {
 			factor = 1
 		}
 	}
+	
+	#################
+	###CENTRE PATH###
+	#################
 
-	#Focus for The Future of France...
+	#Focus for Édouard Herriot!
 	focus = {
-		id = FRA_thefutureoffrance
-		icon = GFX_focus_generic_soviet_politics
-		x = 29
-		y = 3
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = FRA_reconcilethesocialdemocrats }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for ...is with Blum
-	focus = {
-		id = FRA_iswithblum
-		icon = GFX_focus_fra_french_union
-		x = 27
-		y = 4
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = FRA_thefutureoffrance }
-		mutually_exclusive = { focus = FRA_iswiththorez }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Reconcile the Social Democrats
-	focus = {
-		id = FRA_reconcilethesocialdemocrats
-		icon = GFX_focus_spr_masters_of_our_own_fate
-		x = 29
+		id = FRA_douardherriot
+		icon = GFX_focus_focus_fra_fascist_threat
+		x = 16
 		y = 2
 		cost = 10
 		available_if_capitulated = yes
-		prerequisite = { focus = FRA_vivelarevolution }
-		ai_will_do = {
-			factor = 1
+		prerequisite = { focus = FRA_emergencyelections }
+		mutually_exclusive = { 
+			focus = FRA_louismarin 
+			focus = FRA_douarddaladier 
 		}
-	}
-
-	#Focus for Vive la Revolution!
-	focus = {
-		id = FRA_vivelarevolution
-		icon = GFX_focus_focus_fra_revolution_utmost
-		x = 29
-		y = 0
-		cost = 10
-		available_if_capitulated = yes
 		available = {
-			has_country_flag = FRA_revolution
+			has_country_flag = FRA_centrealliance
 		}
 		ai_will_do = {
 			factor = 1
 		}
+		completion_reward = {
+			set_politics = {
+				ruling_party = populist
+				elections_allowed = yes
+				last_election = 1930.5.1
+				election_frequency = 60
+			}
+		}
 	}
+	
+	####################
+	###SOCIALIST PATH###
+	####################
 
 	#Focus for Édouard Daladier!
 	focus = {
@@ -127,209 +182,51 @@ focus_tree = {
 		}
 	}
 
-	#Focus for Philippe Pétain's Government!
+	#Focus for De-criminalize Socialism
 	focus = {
-		id = FRA_philippeptainsgovernment
-		icon = GFX_focus_generic_manpower
-		x = 3
-		y = 1
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = FRA_vivelacontrervolution }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Who is our king?
-	focus = {
-		id = FRA_whoisourking
-		icon = GFX_focus_generic_monarchy_2
-		x = 3
+		id = FRA_decriminalizesocialism
+		icon = GFX_focus_YUG_pan_slavic_congress
+		x = 24
 		y = 3
 		cost = 10
 		available_if_capitulated = yes
-		prerequisite = { focus = FRA_eliminatesocialism }
+		prerequisite = { focus = FRA_douarddaladier }
 		ai_will_do = {
 			factor = 1
 		}
 	}
 
-	#Focus for Invite Napoléon!
+	#Focus for Antagonize the Right
 	focus = {
-		id = FRA_invitenapolon
-		icon = GFX_focus_focus_fra_third_empire
-		x = 1
+		id = FRA_antagonizetheright
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		x = 24
 		y = 4
 		cost = 10
 		available_if_capitulated = yes
-		prerequisite = { focus = FRA_whoisourking }
-		mutually_exclusive = { focus = FRA_reaffirmjeanspower }
+		prerequisite = { focus = FRA_decriminalizesocialism }
 		ai_will_do = {
 			factor = 1
 		}
 	}
 
-	#Focus for Re-affirm Jean's power!
+	#Focus for A Nation Reborn
 	focus = {
-		id = FRA_reaffirmjeanspower
-		icon = GFX_focus_focus_fra_orleans_restoration
-		x = 5
-		y = 4
+		id = FRA_anationreborn
+		icon = GFX_goal_support_communism
+		x = 24
+		y = 5
 		cost = 10
 		available_if_capitulated = yes
-		prerequisite = { focus = FRA_whoisourking }
-		mutually_exclusive = { focus = FRA_invitenapolon }
+		prerequisite = { focus = FRA_antagonizetheright }
 		ai_will_do = {
 			factor = 1
 		}
 	}
-
-	#Focus for Emergency Elections
-	focus = {
-		id = FRA_emergencyelections
-		icon = GFX_focus_generic_the_giant_wakes
-		x = 16
-		y = 1
-		cost = 1
-		available_if_capitulated = yes
-		prerequisite = { focus = FRA_thefebruarycrisis }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Édouard Herriot!
-	focus = {
-		id = FRA_douardherriot
-		icon = GFX_focus_focus_fra_fascist_threat
-		x = 16
-		y = 2
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = FRA_emergencyelections }
-		mutually_exclusive = { 
-			focus = FRA_louismarin 
-			focus = FRA_douarddaladier 
-		}
-		available = {
-			has_country_flag = FRA_centrealliance
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			set_politics = {
-				ruling_party = populist
-				elections_allowed = yes
-				last_election = 1930.5.1
-				election_frequency = 60
-			}
-		}
-	}
-
-	#Focus for The February Crisis
-	focus = {
-		id = FRA_thefebruarycrisis
-		icon = GFX_focus_rom_handle_king
-		x = 16
-		y = 0
-		cost = 1
-		available_if_capitulated = yes
-		available = {
-			has_country_flag = FRA_februarycrisis
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Renew the Constitution...
-	focus = {
-		id = FRA_renewtheconstitution
-		icon = GFX_focus_hol_the_foundations_of_defense
-		x = 8
-		y = 3
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = FRA_louismarin }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Louis Marin!
-	focus = {
-		id = FRA_louismarin
-		icon = GFX_focus_mex_restore_the_army_of_christ
-		x = 8
-		y = 2
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = FRA_emergencyelections }
-		mutually_exclusive = { 
-			focus = FRA_douarddaladier 
-			focus = FRA_douardherriot 
-		}
-		available = {
-			has_country_flag = FRA_conservativecoalition
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			set_politics = {
-				ruling_party = social_conservative
-				elections_allowed = yes
-				last_election = 1930.5.1
-				election_frequency = 60
-			}
-		}
-	}
-
-	#Focus for Vive la contre-révolution
-	focus = {
-		id = FRA_vivelacontrervolution
-		icon = GFX_focus_generic_monarchy_1
-		x = 3
-		y = 0
-		cost = 10
-		available_if_capitulated = yes
-		available = {
-			has_country_flag = FRA_counterrevolution
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Eliminate Socialism
-	focus = {
-		id = FRA_eliminatesocialism
-		icon = GFX_focus_ger_bulwark_against_bolshevism
-		x = 3
-		y = 2
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = FRA_philippeptainsgovernment }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Hubert Lagardelle's Government!
-	focus = {
-		id = FRA_hubertlagardellesgovernment
-		icon = GFX_focus_focus_fra_maquis
-		x = 29
-		y = 1
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = FRA_vivelarevolution }
-		ai_will_do = {
-			factor = 1
-		}
-	}
+	
+	########################
+	###LAISSEZ-FAIRE PATH###
+	########################
 
 	#Focus for Laissez-faire Economics
 	focus = {
@@ -344,6 +241,127 @@ focus_tree = {
 			focus = FRA_louismarin 
 		}
 		mutually_exclusive = { focus = FRA_statecapitalism }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			remove_ideas = FRA_great_depression_1
+			add_ideas = FRA_great_depression_2
+		}
+	}
+
+	#Focus for Attract foreign Capital
+	focus = {
+		id = FRA_attractforeigncapital
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 10
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = FRA_laissezfaireeconomics }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			remove_ideas = FRA_great_depression_2
+			add_ideas = FRA_great_depression_3
+		}
+	}
+
+	#Focus for Invest into the Union monétaire latine
+	focus = {
+		id = FRA_investintotheunionmontairelatine
+		icon = GFX_focus_por_concordat
+		x = 12
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = FRA_laissezfaireeconomics }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			remove_ideas = FRA_inflation_crisis
+			add_timed_idea = {
+				idea = FRA_inflation_recovery
+				days = 365
+			}
+		}
+	}
+
+	#Focus for Attract Capitalists
+	focus = {
+		id = FRA_attractcapitalists
+		icon = GFX_focus_spr_the_anti_fascist_workers_revolution
+		x = 14
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = FRA_laissezfaireeconomics 
+			focus = FRA_statecapitalism 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			remove_ideas = FRA_worker_shortage
+			add_timed_idea = {
+				idea = FRA_domestic_capitalists
+				days = 180
+			}
+		}
+	}
+
+	#Focus for Slow But Stable Recovery
+	focus = {
+		id = FRA_slowbutstablerecovery
+		icon = GFX_goal_generic_major_alliance
+		x = 12
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = FRA_attractforeigncapital 
+		}
+		prerequisite = { 
+			focus = FRA_investintotheunionmontairelatine 
+		}
+		prerequisite = { 
+			focus = FRA_attractcapitalists 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			remove_ideas = FRA_great_depression_3
+			add_ideas = laissez_faire_economics
+			add_timed_idea = {
+				idea = FRA_great_depression_4
+				days = 365
+			}
+		}
+	}
+	
+	###########################
+	###STATE CAPITALISM PATH###
+	###########################
+
+	#Focus for State Capitalism
+	focus = {
+		id = FRA_statecapitalism
+		icon = GFX_goal_generic_soviet_construction
+		x = 16
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = FRA_douardherriot }
+		mutually_exclusive = { 
+			focus = FRA_laissezfaireeconomics 
+		}
+		mutually_exclusive = { 
+			focus = FRA_interventionisteconomy 
+		}
 		ai_will_do = {
 			factor = 1
 		}
@@ -373,6 +391,40 @@ focus_tree = {
 			}
 		}
 	}
+
+	#Focus for Une France réunie
+	focus = {
+		id = FRA_unefrancerunie
+		icon = GFX_focus_fra_french_union
+		x = 16
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = FRA_devaluethefranc 
+		}
+		prerequisite = { 
+			focus = FRA_subsidizefactoryconstruction 
+		}
+		prerequisite = { 
+			focus = FRA_attractcapitalists 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			remove_ideas = FRA_great_depression_3
+			add_ideas = state_capitalist_economics
+			add_timed_idea = {
+				idea = FRA_great_depression_4
+				days = 90
+			}
+		}
+	}
+	
+	##################################
+	###INTERVENTIONIST ECONOMY PATH###
+	##################################
 
 	#Focus for Interventionist Economy
 	focus = {
@@ -417,60 +469,33 @@ focus_tree = {
 		}
 	}
 
-	#Focus for State Capitalism
+	#Focus for Introduce a Minimum Wage
 	focus = {
-		id = FRA_statecapitalism
-		icon = GFX_goal_generic_soviet_construction
-		x = 16
-		y = 3
-		cost = 5
-		available_if_capitulated = yes
-		prerequisite = { focus = FRA_douardherriot }
-		mutually_exclusive = { 
-			focus = FRA_laissezfaireeconomics 
-		}
-		mutually_exclusive = { 
-			focus = FRA_interventionisteconomy 
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			remove_ideas = FRA_great_depression_1
-			add_ideas = FRA_great_depression_2
-		}
-	}
-
-	#Focus for Invest into the Union monétaire latine
-	focus = {
-		id = FRA_investintotheunionmontairelatine
-		icon = GFX_focus_por_concordat
-		x = 12
+		id = FRA_introduceaminimumwage
+		icon = GFX_focus_generic_concessions
+		x = 20
 		y = 4
 		cost = 5
 		available_if_capitulated = yes
-		prerequisite = { focus = FRA_laissezfaireeconomics }
+		prerequisite = { focus = FRA_interventionisteconomy }
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
 			remove_ideas = FRA_inflation_crisis
-			add_timed_idea = {
-				idea = FRA_inflation_recovery
-				days = 365
-			}
+			add_ideas = FRA_minimum_wage
 		}
 	}
 
-	#Focus for Attract foreign Capital
+	#Focus for Break Monopolies
 	focus = {
-		id = FRA_attractforeigncapital
-		icon = GFX_goal_generic_intelligence_exchange
-		x = 10
+		id = FRA_breakmonopolies
+		icon = GFX_goal_continuous_suppression
+		x = 22
 		y = 4
 		cost = 5
 		available_if_capitulated = yes
-		prerequisite = { focus = FRA_laissezfaireeconomics }
+		prerequisite = { focus = FRA_interventionisteconomy }
 		ai_will_do = {
 			factor = 1
 		}
@@ -480,132 +505,159 @@ focus_tree = {
 		}
 	}
 
-	#Focus for Attract Capitalists
+	#Focus for An Economic Revolution
 	focus = {
-		id = FRA_attractcapitalists
-		icon = GFX_focus_spr_the_anti_fascist_workers_revolution
-		x = 14
-		y = 4
+		id = FRA_aneconomicrevolution
+		icon = GFX_goal_tfv_burn_the_royal_portraits
+		x = 20
+		y = 5
 		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { 
-			focus = FRA_laissezfaireeconomics 
-			focus = FRA_statecapitalism 
+			focus = FRA_subsidizefactoryconstruction 
+		}
+		prerequisite = { 
+			focus = FRA_introduceaminimumwage 
+		}
+		prerequisite = { 
+			focus = FRA_breakmonopolies 
 		}
 		ai_will_do = {
 			factor = 1
 		}
 		completion_reward = {
-			remove_ideas = FRA_worker_shortage
+			remove_ideas = FRA_great_depression_3
+			add_ideas = interventionist_economy
 			add_timed_idea = {
-				idea = FRA_domestic_capitalists
-				days = 180
+				idea = FRA_great_depression_4
+				days = 45
 			}
 		}
 	}
+	
+	#####################
+	###REVOLUTION PATH###
+	#####################
 
-	#Focus for Antagonize the Right
+	#Focus for Vive la Revolution!
 	focus = {
-		id = FRA_antagonizetheright
-		icon = GFX_focus_generic_anti_fascist_diplomacy
-		x = 24
+		id = FRA_vivelarevolution
+		icon = GFX_focus_focus_fra_revolution_utmost
+		x = 29
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		available = {
+			has_country_flag = FRA_revolution
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Hubert Lagardelle's Government!
+	focus = {
+		id = FRA_hubertlagardellesgovernment
+		icon = GFX_focus_focus_fra_maquis
+		x = 29
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = FRA_vivelarevolution }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Reconcile the Social Democrats
+	focus = {
+		id = FRA_reconcilethesocialdemocrats
+		icon = GFX_focus_spr_masters_of_our_own_fate
+		x = 29
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = FRA_vivelarevolution }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The Future of France...
+	focus = {
+		id = FRA_thefutureoffrance
+		icon = GFX_focus_generic_soviet_politics
+		x = 29
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = FRA_reconcilethesocialdemocrats }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	###############
+	###BLUM PATH###
+	###############
+
+	#Focus for ...is with Blum
+	focus = {
+		id = FRA_iswithblum
+		icon = GFX_focus_fra_french_union
+		x = 27
 		y = 4
 		cost = 10
 		available_if_capitulated = yes
-		prerequisite = { focus = FRA_decriminalizesocialism }
+		prerequisite = { focus = FRA_thefutureoffrance }
+		mutually_exclusive = { focus = FRA_iswiththorez }
 		ai_will_do = {
 			factor = 1
 		}
 	}
 
-	#Focus for Break Labour Unions
+	#Focus for A New Parliament
 	focus = {
-		id = FRA_breaklabourunions
-		icon = GFX_goal_generic_war_with_comintern
-		x = 1
-		y = 7
+		id = FRA_anewparliament
+		icon = GFX_focus_spr_class_war
+		x = 27
+		y = 5
 		cost = 10
 		available_if_capitulated = yes
-		prerequisite = { 
-			focus = FRA_aplannedeconomy 
-		}
-		prerequisite = { 
-			focus = FRA_libertsansdmocratie 
-		}
+		prerequisite = { focus = FRA_iswithblum }
 		ai_will_do = {
 			factor = 1
 		}
 	}
 
-	#Focus for State Run Unions
+	#Focus for Communes Unies de France
 	focus = {
-		id = FRA_staterununions
-		icon = GFX_goal_tfv_burn_the_royal_portraits
-		x = 5
-		y = 7
+		id = FRA_communesuniesdefrance
+		icon = GFX_focus_chi_reach_out_to_france
+		x = 27
+		y = 6
 		cost = 10
 		available_if_capitulated = yes
-		prerequisite = { 
-			focus = FRA_modernconstitutionalism 
-		}
-		prerequisite = { 
-			focus = FRA_aplannedeconomy 
-		}
+		prerequisite = { focus = FRA_anewparliament }
 		ai_will_do = {
 			factor = 1
 		}
 	}
-
-	#Focus for The Illusion of Power
+	
+	#################
+	###THOREZ PATH###
+	#################
+	
+	#Focus for ...is with Thorez
 	focus = {
-		id = FRA_theillusionofpower
-		icon = GFX_goal_generic_demand_territory
-		x = 5
-		y = 8
+		id = FRA_iswiththorez
+		icon = GFX_goal_support_fourth_int
+		x = 31
+		y = 4
 		cost = 10
 		available_if_capitulated = yes
-		prerequisite = { 
-			focus = FRA_staterununions 
-		}
-		prerequisite = { 
-			focus = FRA_sendworkerstomilitaryfactories 
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Propagandize Industrialism
-	focus = {
-		id = FRA_propagandizeindustrialism
-		icon = GFX_goal_generic_production2
-		x = 1
-		y = 8
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = FRA_sendworkerstomilitaryfactories 
-		}
-		prerequisite = { 
-			focus = FRA_breaklabourunions 
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Economic Stabilization
-	focus = {
-		id = FRA_economicstabilization
-		icon = GFX_goal_generic_trade
-		x = 3
-		y = 9
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = FRA_theillusionofpower 
-			focus = FRA_propagandizeindustrialism 
-		}
+		prerequisite = { focus = FRA_thefutureoffrance }
+		mutually_exclusive = { focus = FRA_iswithblum }
 		ai_will_do = {
 			factor = 1
 		}
@@ -638,6 +690,10 @@ focus_tree = {
 			factor = 1
 		}
 	}
+	
+	#################################
+	###COMMIE PLANNED ECONOMY PATH###
+	#################################
 
 	#Focus for Assess Economic Damage
 	focus = {
@@ -656,15 +712,15 @@ focus_tree = {
 		}
 	}
 
-	#Focus for Communes Unies de France
+	#Focus for Government Controlled Economy!
 	focus = {
-		id = FRA_communesuniesdefrance
-		icon = GFX_focus_chi_reach_out_to_france
-		x = 27
+		id = FRA_governmentcontrolledeconomy
+		icon = GFX_focus_CZE_german_puppet
+		x = 29
 		y = 6
 		cost = 10
 		available_if_capitulated = yes
-		prerequisite = { focus = FRA_anewparliament }
+		prerequisite = { focus = FRA_assesseconomicdamage }
 		ai_will_do = {
 			factor = 1
 		}
@@ -741,273 +797,6 @@ focus_tree = {
 		}
 	}
 
-	#Focus for Vive la France
-	focus = {
-		id = FRA_vivelafrance
-		icon = GFX_focus_chi_reach_out_to_france
-		x = 8
-		y = 5
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = FRA_unitythroughstrength }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Une France réunie
-	focus = {
-		id = FRA_unefrancerunie
-		icon = GFX_focus_fra_french_union
-		x = 16
-		y = 5
-		cost = 5
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = FRA_devaluethefranc 
-		}
-		prerequisite = { 
-			focus = FRA_subsidizefactoryconstruction 
-		}
-		prerequisite = { 
-			focus = FRA_attractcapitalists 
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			remove_ideas = FRA_great_depression_3
-			add_ideas = state_capitalist_economics
-			add_timed_idea = {
-				idea = FRA_great_depression_4
-				days = 90
-			}
-		}
-	}
-
-	#Focus for An Economic Revolution
-	focus = {
-		id = FRA_aneconomicrevolution
-		icon = GFX_goal_tfv_burn_the_royal_portraits
-		x = 20
-		y = 5
-		cost = 5
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = FRA_subsidizefactoryconstruction 
-		}
-		prerequisite = { 
-			focus = FRA_introduceaminimumwage 
-		}
-		prerequisite = { 
-			focus = FRA_breakmonopolies 
-		}
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			remove_ideas = FRA_great_depression_3
-			add_ideas = interventionist_economy
-			add_timed_idea = {
-				idea = FRA_great_depression_4
-				days = 45
-			}
-		}
-	}
-
-	#Focus for A Nation Reborn
-	focus = {
-		id = FRA_anationreborn
-		icon = GFX_goal_support_communism
-		x = 24
-		y = 5
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = FRA_antagonizetheright }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Liberté sans démocratie
-	focus = {
-		id = FRA_libertsansdmocratie
-		icon = GFX_focus_usa_voter_registration_act
-		x = 1
-		y = 6
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = FRA_dissolveparliament }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Modern Constitutionalism
-	focus = {
-		id = FRA_modernconstitutionalism
-		icon = GFX_focus_spr_crush_the_revolution
-		x = 5
-		y = 6
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = FRA_appointparliament }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Appoint Parliament
-	focus = {
-		id = FRA_appointparliament
-		icon = GFX_goal_tfv_strengthen_commonwealth_ties
-		x = 5
-		y = 5
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = FRA_reaffirmjeanspower }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Dissolve Parliament
-	focus = {
-		id = FRA_dissolveparliament
-		icon = GFX_focus_renounce_the_treaty_of_trianon
-		x = 1
-		y = 5
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = FRA_invitenapolon }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Adress the Economy
-	focus = {
-		id = FRA_adresstheeconomy
-		icon = GFX_focus_usa_reestablish_the_gold_standard
-		x = 3
-		y = 5
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { 
-			focus = FRA_reaffirmjeanspower 
-			focus = FRA_invitenapolon 
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for A Planned Economy
-	focus = {
-		id = FRA_aplannedeconomy
-		icon = GFX_goal_generic_production
-		x = 3
-		y = 6
-		cost = 5
-		available_if_capitulated = yes
-		prerequisite = { focus = FRA_adresstheeconomy }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Introduce a Minimum Wage
-	focus = {
-		id = FRA_introduceaminimumwage
-		icon = GFX_focus_generic_concessions
-		x = 20
-		y = 4
-		cost = 5
-		available_if_capitulated = yes
-		prerequisite = { focus = FRA_interventionisteconomy }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			remove_ideas = FRA_inflation_crisis
-			add_ideas = FRA_minimum_wage
-		}
-	}
-
-	#Focus for Break Monopolies
-	focus = {
-		id = FRA_breakmonopolies
-		icon = GFX_goal_continuous_suppression
-		x = 22
-		y = 4
-		cost = 5
-		available_if_capitulated = yes
-		prerequisite = { focus = FRA_interventionisteconomy }
-		ai_will_do = {
-			factor = 1
-		}
-		completion_reward = {
-			remove_ideas = FRA_great_depression_2
-			add_ideas = FRA_great_depression_3
-		}
-	}
-
-	#Focus for De-criminalize Socialism
-	focus = {
-		id = FRA_decriminalizesocialism
-		icon = GFX_focus_YUG_pan_slavic_congress
-		x = 24
-		y = 3
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = FRA_douarddaladier }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Send Workers to Military Factories
-	focus = {
-		id = FRA_sendworkerstomilitaryfactories
-		icon = GFX_goal_generic_construct_mil_factory
-		x = 3
-		y = 7
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = FRA_aplannedeconomy }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for A New Parliament
-	focus = {
-		id = FRA_anewparliament
-		icon = GFX_focus_spr_class_war
-		x = 27
-		y = 5
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = FRA_iswithblum }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	#Focus for Government Controlled Economy!
-	focus = {
-		id = FRA_governmentcontrolledeconomy
-		icon = GFX_focus_CZE_german_puppet
-		x = 29
-		y = 6
-		cost = 10
-		available_if_capitulated = yes
-		prerequisite = { focus = FRA_assesseconomicdamage }
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
 	#Focus for Food Redistribution
 	focus = {
 		id = FRA_foodredistribution
@@ -1043,34 +832,302 @@ focus_tree = {
 			factor = 1
 		}
 	}
+	
+	#############################
+	###COUNTER REVOLUTION PATH###
+	#############################
 
-	#Focus for Slow But Stable Recovery
+	#Focus for Vive la contre-révolution
 	focus = {
-		id = FRA_slowbutstablerecovery
-		icon = GFX_goal_generic_major_alliance
-		x = 12
-		y = 5
-		cost = 5
+		id = FRA_vivelacontrervolution
+		icon = GFX_focus_generic_monarchy_1
+		x = 3
+		y = 0
+		cost = 10
 		available_if_capitulated = yes
-		prerequisite = { 
-			focus = FRA_attractforeigncapital 
-		}
-		prerequisite = { 
-			focus = FRA_investintotheunionmontairelatine 
-		}
-		prerequisite = { 
-			focus = FRA_attractcapitalists 
+		available = {
+			has_country_flag = FRA_counterrevolution
 		}
 		ai_will_do = {
 			factor = 1
 		}
-		completion_reward = {
-			remove_ideas = FRA_great_depression_3
-			add_ideas = laissez_faire_economics
-			add_timed_idea = {
-				idea = FRA_great_depression_4
-				days = 365
-			}
+	}
+	
+	#Focus for Philippe Pétain's Government!
+	focus = {
+		id = FRA_philippeptainsgovernment
+		icon = GFX_focus_generic_manpower
+		x = 3
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = FRA_vivelacontrervolution }
+		ai_will_do = {
+			factor = 1
 		}
-	} 
+	}
+
+	#Focus for Eliminate Socialism
+	focus = {
+		id = FRA_eliminatesocialism
+		icon = GFX_focus_ger_bulwark_against_bolshevism
+		x = 3
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = FRA_philippeptainsgovernment }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Who is our king?
+	focus = {
+		id = FRA_whoisourking
+		icon = GFX_focus_generic_monarchy_2
+		x = 3
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = FRA_eliminatesocialism }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	####################
+	###ORLEANIST PATH###
+	####################
+
+	#Focus for Re-affirm Jean's power!
+	focus = {
+		id = FRA_reaffirmjeanspower
+		icon = GFX_focus_focus_fra_orleans_restoration
+		x = 5
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = FRA_whoisourking }
+		mutually_exclusive = { focus = FRA_invitenapolon }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Appoint Parliament
+	focus = {
+		id = FRA_appointparliament
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 5
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = FRA_reaffirmjeanspower }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Modern Constitutionalism
+	focus = {
+		id = FRA_modernconstitutionalism
+		icon = GFX_focus_spr_crush_the_revolution
+		x = 5
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = FRA_appointparliament }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	#####################
+	###NAPOLEONIC PATH###
+	#####################
+
+	#Focus for Invite Napoléon!
+	focus = {
+		id = FRA_invitenapolon
+		icon = GFX_focus_focus_fra_third_empire
+		x = 1
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = FRA_whoisourking }
+		mutually_exclusive = { focus = FRA_reaffirmjeanspower }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Dissolve Parliament
+	focus = {
+		id = FRA_dissolveparliament
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		x = 1
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = FRA_invitenapolon }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Liberté sans démocratie
+	focus = {
+		id = FRA_libertsansdmocratie
+		icon = GFX_focus_usa_voter_registration_act
+		x = 1
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = FRA_dissolveparliament }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	#####################################
+	###MONARCHIST PLANNED ECONOMY PATH###
+	#####################################
+	
+	#Focus for Address the Economy
+	focus = {
+		id = FRA_addresstheeconomy
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 3
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = FRA_reaffirmjeanspower 
+			focus = FRA_invitenapolon 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for A Planned Economy
+	focus = {
+		id = FRA_aplannedeconomy
+		icon = GFX_goal_generic_production
+		x = 3
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = FRA_adresstheeconomy }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Break Labour Unions
+	focus = {
+		id = FRA_breaklabourunions
+		icon = GFX_goal_generic_war_with_comintern
+		x = 1
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = FRA_aplannedeconomy 
+		}
+		prerequisite = { 
+			focus = FRA_libertsansdmocratie 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for State Run Unions
+	focus = {
+		id = FRA_staterununions
+		icon = GFX_goal_tfv_burn_the_royal_portraits
+		x = 5
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = FRA_modernconstitutionalism 
+		}
+		prerequisite = { 
+			focus = FRA_aplannedeconomy 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Send Workers to Military Factories
+	focus = {
+		id = FRA_sendworkerstomilitaryfactories
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 3
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = FRA_aplannedeconomy }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Propagandize Industrialism
+	focus = {
+		id = FRA_propagandizeindustrialism
+		icon = GFX_goal_generic_production2
+		x = 1
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = FRA_sendworkerstomilitaryfactories 
+		}
+		prerequisite = { 
+			focus = FRA_breaklabourunions 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for The Illusion of Power
+	focus = {
+		id = FRA_theillusionofpower
+		icon = GFX_goal_generic_demand_territory
+		x = 5
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = FRA_staterununions 
+		}
+		prerequisite = { 
+			focus = FRA_sendworkerstomilitaryfactories 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Economic Stabilization
+	focus = {
+		id = FRA_economicstabilization
+		icon = GFX_goal_generic_trade
+		x = 3
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = FRA_theillusionofpower 
+			focus = FRA_propagandizeindustrialism 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
  }
