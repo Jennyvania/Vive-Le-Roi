@@ -235,7 +235,61 @@ set_popularities = {
 add_ideas = {
 }
 
-#Order matters here Daladier will start as leaders because added last
+create_country_leader = {
+	name = "Louis-Philippe II"
+	desc = "POLITICS_LOUIS_PHILIPPE_DESC"
+	picture = "Portrait_France_Louis_Philippe.dds"
+	expire = "1965.1.1"
+	ideology = monarchist
+	traits = {
+		
+	}
+}
+
+create_country_leader = {
+	name = "Jacques Doriot"
+	desc = "POLITICS_PHILIPPE_PÉTAIN_DESC"
+	picture = "Portrait_France_Jacques_Doriot.dds"
+	expire = "1965.1.1"
+	ideology = fascist
+	traits = {
+		
+	}
+}
+
+create_country_leader = {
+	name = "Louis Marin"
+	desc = "POLITICS_LOUIS_MARIN_DESC"
+	picture = "Portrait_France_Louis_Marin.dds"
+	expire = "1965.1.1"
+	ideology = conservative
+	traits = {
+		
+	}
+}
+
+create_country_leader = {
+	name = "André Tardieu"
+	desc = "POLITICS_ANDREW_TARDIEU_DESC"
+	picture = "Portrait_France_Andrew_Tardieu.dds"
+	expire = "1965.1.1"
+	ideology = centre_populist
+	traits = {
+		
+	}
+}
+
+create_country_leader = {
+	name = "Camille Chautempsu"
+	desc = "POLITICS_CAMILLE_CHAUTEMPSU_DESC"
+	picture = "Portrait_France_Camille_Chautempsu.dds"
+	expire = "1965.1.1"
+	ideology = market_liberal
+	traits = {
+		
+	}
+}
+
 create_country_leader = {
 	name = "Édouard Daladier"
 	desc = "POLITICS_ÉDOUARD_DALADIER_DESC"
@@ -253,17 +307,6 @@ create_country_leader = {
 	picture = "GFX_portrait_fra_maurice_thorez"
 	expire = "1965.1.1"
 	ideology = 	national_collectivist
-	traits = {
-		
-	}
-}
-
-create_country_leader = {
-	name = "Philippe Pétain"
-	desc = "POLITICS_PHILIPPE_PÉTAIN_DESC"
-	picture = "Portrait_France_Philippe_Petain.dds"
-	expire = "1965.1.1"
-	ideology = fascist
 	traits = {
 		
 	}

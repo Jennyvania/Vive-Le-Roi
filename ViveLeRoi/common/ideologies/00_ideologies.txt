@@ -316,9 +316,6 @@ ideologies = {
 			neomarxist = {
 			}
 			
-			thorezist = {
-			}
-			
 			national_collectivist = {
 			}
 		}
