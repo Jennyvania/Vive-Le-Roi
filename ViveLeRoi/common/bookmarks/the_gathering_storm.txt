@@ -16,6 +16,9 @@ bookmarks = {
 				FRA_inflation_crisis
 			}
 			focuses = {
+				FRA_vivelacontrervolution
+				FRA_thefebruarycrisis
+				FRA_vivelarevolution
 			}
 		}
 		"USA"={

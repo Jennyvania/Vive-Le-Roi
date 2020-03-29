@@ -64,7 +64,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			set_politics = {
-				ruling_party = social_conservative
+				ruling_party = social_conservatism
 				elections_allowed = yes
 				last_election = 1930.5.1
 				election_frequency = 60
@@ -141,7 +141,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			set_politics = {
-				ruling_party = populist
+				ruling_party = centrism
 				elections_allowed = yes
 				last_election = 1930.5.1
 				election_frequency = 60
@@ -174,7 +174,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			set_politics = {
-				ruling_party = socialist
+				ruling_party = democratic_socialism
 				elections_allowed = yes
 				last_election = 1930.5.1
 				election_frequency = 60
@@ -545,13 +545,31 @@ focus_tree = {
 		icon = GFX_focus_focus_fra_revolution_utmost
 		x = 29
 		y = 0
-		cost = 10
+		cost = 1
 		available_if_capitulated = yes
 		available = {
 			has_country_flag = FRA_revolution
 		}
 		ai_will_do = {
 			factor = 1
+		}
+		completion_reward = {
+			set_politics = {
+				ruling_party = communist
+				elections_allowed = no
+			}
+			hidden_effect = {
+				retire_country_leader = yes
+				create_country_leader = {
+					name = "Paris Commune"
+					desc = "POLITICS_PARIS_COMMUNE_DESC"
+					picture = "GFX_portrait_fra_paris_commune.dds"
+					expire = "1965.1.1"
+					ideology = 	neomarxist
+					traits = {
+					}
+				}
+			}
 		}
 	}
 
@@ -561,7 +579,7 @@ focus_tree = {
 		icon = GFX_focus_focus_fra_maquis
 		x = 29
 		y = 1
-		cost = 10
+		cost = 1
 		available_if_capitulated = yes
 		prerequisite = { focus = FRA_vivelarevolution }
 		ai_will_do = {
@@ -575,9 +593,9 @@ focus_tree = {
 		icon = GFX_focus_spr_masters_of_our_own_fate
 		x = 29
 		y = 2
-		cost = 10
+		cost = 20
 		available_if_capitulated = yes
-		prerequisite = { focus = FRA_vivelarevolution }
+		prerequisite = { focus = FRA_hubertlagardellesgovernment }
 		ai_will_do = {
 			factor = 1
 		}
@@ -589,7 +607,7 @@ focus_tree = {
 		icon = GFX_focus_generic_soviet_politics
 		x = 29
 		y = 3
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = FRA_reconcilethesocialdemocrats }
 		ai_will_do = {
@@ -607,7 +625,7 @@ focus_tree = {
 		icon = GFX_focus_fra_french_union
 		x = 27
 		y = 4
-		cost = 10
+		cost = 1
 		available_if_capitulated = yes
 		prerequisite = { focus = FRA_thefutureoffrance }
 		mutually_exclusive = { focus = FRA_iswiththorez }
@@ -622,7 +640,7 @@ focus_tree = {
 		icon = GFX_focus_spr_class_war
 		x = 27
 		y = 5
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = FRA_iswithblum }
 		ai_will_do = {
@@ -636,7 +654,7 @@ focus_tree = {
 		icon = GFX_focus_chi_reach_out_to_france
 		x = 27
 		y = 6
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = FRA_anewparliament }
 		ai_will_do = {
@@ -654,7 +672,7 @@ focus_tree = {
 		icon = GFX_goal_support_fourth_int
 		x = 31
 		y = 4
-		cost = 10
+		cost = 1
 		available_if_capitulated = yes
 		prerequisite = { focus = FRA_thefutureoffrance }
 		mutually_exclusive = { focus = FRA_iswithblum }
@@ -669,7 +687,7 @@ focus_tree = {
 		icon = GFX_focus_generic_soviet_politics
 		x = 31
 		y = 5
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = FRA_iswiththorez }
 		ai_will_do = {
@@ -683,7 +701,7 @@ focus_tree = {
 		icon = GFX_goal_generic_political_pressure
 		x = 31
 		y = 6
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = FRA_empowerthepresidency }
 		ai_will_do = {
@@ -701,7 +719,7 @@ focus_tree = {
 		icon = GFX_goal_generic_consumer_goods
 		x = 29
 		y = 5
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { 
 			focus = FRA_iswiththorez 
@@ -718,7 +736,7 @@ focus_tree = {
 		icon = GFX_focus_CZE_german_puppet
 		x = 29
 		y = 6
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = FRA_assesseconomicdamage }
 		ai_will_do = {
@@ -732,7 +750,7 @@ focus_tree = {
 		icon = GFX_goal_generic_positive_trade_relations
 		x = 27
 		y = 7
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { 
 			focus = FRA_governmentcontrolledeconomy 
@@ -751,7 +769,7 @@ focus_tree = {
 		icon = GFX_focus_generic_industry_3
 		x = 31
 		y = 7
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { 
 			focus = FRA_amodernrobespierre 
@@ -770,7 +788,7 @@ focus_tree = {
 		icon = GFX_goal_generic_propaganda
 		x = 29
 		y = 7
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = FRA_governmentcontrolledeconomy }
 		ai_will_do = {
@@ -784,7 +802,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construction2
 		x = 27
 		y = 8
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { 
 			focus = FRA_unionbasedeconomy 
@@ -803,7 +821,7 @@ focus_tree = {
 		icon = GFX_focus_prc_agrarian_socialism
 		x = 31
 		y = 8
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { 
 			focus = FRA_aidstrugglingindustry 
@@ -822,7 +840,7 @@ focus_tree = {
 		icon = GFX_goal_generic_improve_relations
 		x = 29
 		y = 9
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { 
 			focus = FRA_foodredistribution 
@@ -843,7 +861,7 @@ focus_tree = {
 		icon = GFX_focus_generic_monarchy_1
 		x = 3
 		y = 0
-		cost = 10
+		cost = 1
 		available_if_capitulated = yes
 		available = {
 			has_country_flag = FRA_counterrevolution
@@ -859,7 +877,7 @@ focus_tree = {
 		icon = GFX_focus_generic_manpower
 		x = 3
 		y = 1
-		cost = 10
+		cost = 1
 		available_if_capitulated = yes
 		prerequisite = { focus = FRA_vivelacontrervolution }
 		ai_will_do = {
@@ -873,7 +891,7 @@ focus_tree = {
 		icon = GFX_focus_ger_bulwark_against_bolshevism
 		x = 3
 		y = 2
-		cost = 10
+		cost = 20
 		available_if_capitulated = yes
 		prerequisite = { focus = FRA_philippeptainsgovernment }
 		ai_will_do = {
@@ -887,7 +905,7 @@ focus_tree = {
 		icon = GFX_focus_generic_monarchy_2
 		x = 3
 		y = 3
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = FRA_eliminatesocialism }
 		ai_will_do = {
@@ -905,7 +923,7 @@ focus_tree = {
 		icon = GFX_focus_focus_fra_orleans_restoration
 		x = 5
 		y = 4
-		cost = 10
+		cost = 1
 		available_if_capitulated = yes
 		prerequisite = { focus = FRA_whoisourking }
 		mutually_exclusive = { focus = FRA_invitenapolon }
@@ -920,7 +938,7 @@ focus_tree = {
 		icon = GFX_goal_tfv_strengthen_commonwealth_ties
 		x = 5
 		y = 5
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = FRA_reaffirmjeanspower }
 		ai_will_do = {
@@ -934,7 +952,7 @@ focus_tree = {
 		icon = GFX_focus_spr_crush_the_revolution
 		x = 5
 		y = 6
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = FRA_appointparliament }
 		ai_will_do = {
@@ -952,7 +970,7 @@ focus_tree = {
 		icon = GFX_focus_focus_fra_third_empire
 		x = 1
 		y = 4
-		cost = 10
+		cost = 1
 		available_if_capitulated = yes
 		prerequisite = { focus = FRA_whoisourking }
 		mutually_exclusive = { focus = FRA_reaffirmjeanspower }
@@ -967,7 +985,7 @@ focus_tree = {
 		icon = GFX_focus_renounce_the_treaty_of_trianon
 		x = 1
 		y = 5
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = FRA_invitenapolon }
 		ai_will_do = {
@@ -981,7 +999,7 @@ focus_tree = {
 		icon = GFX_focus_usa_voter_registration_act
 		x = 1
 		y = 6
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = FRA_dissolveparliament }
 		ai_will_do = {
@@ -999,7 +1017,7 @@ focus_tree = {
 		icon = GFX_focus_usa_reestablish_the_gold_standard
 		x = 3
 		y = 5
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { 
 			focus = FRA_reaffirmjeanspower 
@@ -1018,7 +1036,7 @@ focus_tree = {
 		y = 6
 		cost = 5
 		available_if_capitulated = yes
-		prerequisite = { focus = FRA_adresstheeconomy }
+		prerequisite = { focus = FRA_addresstheeconomy }
 		ai_will_do = {
 			factor = 1
 		}
@@ -1030,7 +1048,7 @@ focus_tree = {
 		icon = GFX_goal_generic_war_with_comintern
 		x = 1
 		y = 7
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { 
 			focus = FRA_aplannedeconomy 
@@ -1049,7 +1067,7 @@ focus_tree = {
 		icon = GFX_goal_tfv_burn_the_royal_portraits
 		x = 5
 		y = 7
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { 
 			focus = FRA_modernconstitutionalism 
@@ -1068,7 +1086,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_mil_factory
 		x = 3
 		y = 7
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { focus = FRA_aplannedeconomy }
 		ai_will_do = {
@@ -1082,7 +1100,7 @@ focus_tree = {
 		icon = GFX_goal_generic_production2
 		x = 1
 		y = 8
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { 
 			focus = FRA_sendworkerstomilitaryfactories 
@@ -1101,7 +1119,7 @@ focus_tree = {
 		icon = GFX_goal_generic_demand_territory
 		x = 5
 		y = 8
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { 
 			focus = FRA_staterununions 
@@ -1120,7 +1138,7 @@ focus_tree = {
 		icon = GFX_goal_generic_trade
 		x = 3
 		y = 9
-		cost = 10
+		cost = 5
 		available_if_capitulated = yes
 		prerequisite = { 
 			focus = FRA_theillusionofpower 

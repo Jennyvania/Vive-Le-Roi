@@ -1,0 +1,138 @@
+﻿###########################
+# French Events
+###########################
+
+add_namespace = vlrfrance
+
+##########################
+###1933 ELECTION EVENTS###
+##########################
+
+#February Crisis
+country_event = {
+	id = vlrfrance.1
+	title = vlrfrance.1.t
+	desc = vlrfrance.1.d 
+	picture = #
+	
+	trigger = {
+		tag = FRA
+		date > 1933.2.2
+	}
+	
+	only_fire_once = yes
+	
+	option = {
+		name = vlrfrance.1.a
+		hidden_effect = {
+			set_country_flag = FRA_februarycrisis
+			set_party_name = {
+				ideology = populist
+				long_name = FRA_populist_party_2
+				name = FRA_populist_party
+			}
+			set_popularities = {
+				paternal_autocrat = 9
+				national_conservative = 8
+				social_conservative = 28
+				populist = 17
+				social_liberal = 28
+				socialist = 9
+				communist = 1
+			}
+			set_politics = {
+				ruling_party = populist
+				elections_allowed = yes
+				last_election = 1930.5.1
+				election_frequency = 60
+			}
+		}
+	}
+}
+
+#Elections
+country_event = {
+	id = vlrfrance.2
+	title = vlrfrance.2.t
+	desc = vlrfrance.2.d
+	picture = #
+	
+	trigger = {
+		has_completed_focus = FRA_emergencyelections
+	}
+	
+	only_fire_once = yes
+	
+	option = {
+		id = vlrfrance.2.a
+		set_country_flag = FRA.natcon
+	}
+	
+	option = {
+		id = vlrfrance.2.b
+		country_event = #
+	}
+	
+	option = {
+		id = vlrfrance.2.c
+		country_event = #
+	}
+	
+}
+
+#################
+###SOCCON PATH###
+#################
+
+#Conservative Coalition
+country_event = {
+	id = vlrfrance.3
+	title = vlrfrance.3.t
+	desc = vlrfrance.3.d
+	picture = #
+	
+	trigger = {
+		has_country_flag = FRA_natcon
+	}
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	option = {
+		id = vlrfrance.3.a
+		clr_country_flag = FRA_natcon
+		set_country_flag = FRA_natconconference
+	}
+}
+
+#Conservative Conference
+country_event = {
+	id = vlr.france.4
+	title = vlr.france.4.t
+	desc = vlr.france.4.d
+	picture = #
+	
+	trigger = {
+		has_country_flag = FRA_natconconference
+	}
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	option = {
+		id = vlrfrance.4.a
+		set_country_flag = FRA_natcondiplo
+		clr_country_flag = FRA_natconconference
+		set_country_flag = FRA_natconconference1
+	}
+	
+	option = {
+		id = vlrfrance.4.b
+		set_country_flag = FRA_soccondiplo
+		clr_country_flag = FRA_natconconference
+		set_country_flag = FRA_natconconference1
+	}
+}
+		

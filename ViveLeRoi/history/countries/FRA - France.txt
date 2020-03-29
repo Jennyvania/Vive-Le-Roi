@@ -216,19 +216,22 @@ set_convoys = 300
 
 
 set_politics = {
-	ruling_party = populist
+	ruling_party = centrism
 	last_election = "1930.5.1"
 	election_frequency = 60
 	elections_allowed = yes
 }
 set_popularities = {
-	paternal_autocrat = 9
-	national_conservative = 4
-	social_conservative = 12
-	populist = 57
-	social_liberal = 8
-	socialist = 9
-	communist = 1
+	fascism = 1
+	autocracy = 4
+	national_conservatism = 5
+	social_conservatism = 8
+	centrism = 54
+	social_liberalism = 8
+	democratic_socialism = 11
+	radical_socialism = 6
+	communism = 2
+	vanguardism = 1
 }
 
 add_ideas = {
@@ -243,74 +246,117 @@ create_country_leader = {
 	desc = "POLITICS_LOUIS_PHILIPPE_DESC"
 	picture = "Portrait_France_Louis_Philippe.dds"
 	expire = "1965.1.1"
-	ideology = monarchist
+	ideology = fascism
 	traits = {
 		
 	}
 }
 
 create_country_leader = {
-	name = "Jacques Doriot"
-	desc = "POLITICS_PHILIPPE_PÉTAIN_DESC"
-	picture = "Portrait_France_Jacques_Doriot.dds"
+	name = "Louis-Philippe II"
+	desc = "POLITICS_LOUIS_PHILIPPE_DESC"
+	picture = "Portrait_France_Louis_Philippe.dds"
 	expire = "1965.1.1"
-	ideology = fascist
+	ideology = autocracy
 	traits = {
 		
 	}
 }
 
 create_country_leader = {
-	name = "Louis Marin"
-	desc = "POLITICS_LOUIS_MARIN_DESC"
-	picture = "Portrait_France_Louis_Marin.dds"
+	name = "Louis-Philippe II"
+	desc = "POLITICS_LOUIS_PHILIPPE_DESC"
+	picture = "Portrait_France_Louis_Philippe.dds"
 	expire = "1965.1.1"
-	ideology = conservative
+	ideology = national_conservatism
 	traits = {
 		
 	}
 }
 
 create_country_leader = {
-	name = "André Tardieu"
-	desc = "POLITICS_ANDRE_TARDIEU_DESC"
-	picture = "Portrait_France_Andre_Tardieu.dds"
+	name = "Louis-Philippe II"
+	desc = "POLITICS_LOUIS_PHILIPPE_DESC"
+	picture = "Portrait_France_Louis_Philippe.dds"
 	expire = "1965.1.1"
-	ideology = centre_populist
+	ideology = social_conservatism
 	traits = {
 		
 	}
 }
 
 create_country_leader = {
-	name = "Camille Chautempsu"
-	desc = "POLITICS_CAMILLE_CHAUTEMPSU_DESC"
-	picture = "Portrait_France_Camille_Chautempsu.dds"
+	name = "Louis-Philippe II"
+	desc = "POLITICS_LOUIS_PHILIPPE_DESC"
+	picture = "Portrait_France_Louis_Philippe.dds"
 	expire = "1965.1.1"
-	ideology = market_liberal
+	ideology = centrism
 	traits = {
 		
 	}
 }
 
 create_country_leader = {
-	name = "Édouard Daladier"
-	desc = "POLITICS_ÉDOUARD_DALADIER_DESC"
-	picture = "Portrait_France_Edouard_Daladier.dds"
+	name = "Louis-Philippe II"
+	desc = "POLITICS_LOUIS_PHILIPPE_DESC"
+	picture = "Portrait_France_Louis_Philippe.dds"
 	expire = "1965.1.1"
-	ideology = democratic_socialist
+	ideology = social_liberalism
 	traits = {
-		stout_defender
-		economic_reformer
+		
 	}
 }
 
 create_country_leader = {
-	name = "Maurice Thorez"
-	desc = "POLITICS_MAURICE_THOREZ_DESC"
-	picture = "GFX_portrait_fra_maurice_thorez"
+	name = "Louis-Philippe II"
+	desc = "POLITICS_LOUIS_PHILIPPE_DESC"
+	picture = "Portrait_France_Louis_Philippe.dds"
 	expire = "1965.1.1"
-	ideology = 	national_collectivist
+	ideology = democratic_socialism
+	traits = {
+		
+	}
+}
+
+create_country_leader = {
+	name = "Louis-Philippe II"
+	desc = "POLITICS_LOUIS_PHILIPPE_DESC"
+	picture = "Portrait_France_Louis_Philippe.dds"
+	expire = "1965.1.1"
+	ideology = autocracy
+	traits = {
+		
+	}
+}
+
+create_country_leader = {
+	name = "Paris Commune"
+	desc = "POLITICS_PARIS_COMMUNE_DESC"
+	picture = "Portrait_France_Paris_Commune.dds"
+	expire = "1965.1.1"
+	ideology = radical_socialism
+	traits = {
+		
+	}
+}
+
+create_country_leader = {
+	name = "Paris Commune"
+	desc = "POLITICS_PARIS_COMMUNE_DESC"
+	picture = "Portrait_France_Paris_Commune.dds"
+	expire = "1965.1.1"
+	ideology = communism
+	traits = {
+		
+	}
+}
+
+create_country_leader = {
+	name = "Paris Commune"
+	desc = "POLITICS_PARIS_COMMUNE_DESC"
+	picture = "Portrait_France_Paris_Commune.dds"
+	expire = "1965.1.1"
+	ideology = vanguardism
 	traits = {
 		
 	}
