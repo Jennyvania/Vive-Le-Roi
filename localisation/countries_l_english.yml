@@ -1,0 +1,24 @@
+﻿l_english:
+ FRA_fascism:2 "French Kingdom
+ FRA_fascism_DEF:2 "the French Kingdom"
+ FRA_autocracy:1 "French Kingdom"
+ FRA_autocracy_DEF:1 "the French Kingdom"
+ FRA_national_conservatism:1 "French Kingdom"
+ FRA_national_conservatism_DEF:1 "the French Kingdom"
+ FRA_social_conservatism:1 "French Kingdom"
+ FRA_social_conservatism_DEF:1 "the French Kingdom"
+ FRA_centrism:1 "French Kingdom"
+ FRA_centrism_DEF:1 "the French Kingdom"
+ FRA_social_liberalism:1 "French Kingdom"
+ FRA_social_liberalsm_DEF:1 "the French Kingdom"
+ FRA_democratic_socialism:1 "French Kingdom"
+ FRA_democratic_socialism_DEF:1 "the French Kingdom
+ FRA_radical_socialism:1 "United Communes of France"
+ FRA_radical_socialism_DEF:1 "the United Communes of France"
+ FRA_communism:1 "United Communes of France"
+ FRA_communism_DEF:1 "the United Communes of France"
+ FRA_vanguardism:1 "French Commune"
+ FRA_vanguardism_DEF:1 "the French Commune"
+ FRA:0 "France
+ FRA_DEF:0 "France"
+ FRA_ADJ:0 "French"

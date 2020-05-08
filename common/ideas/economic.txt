@@ -1,0 +1,50 @@
+ideas = {
+	country = {
+		laissez_faire_economics = {
+			picture = rom_sentinel_of_motherland
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_arms_factory_factor = -0.1
+				production_speed_dockyard_factor = -0.1
+				production_speed_industrial_complex_factor = -0.1
+				political_power_gain = 0.25
+				stability_factor = 0.15
+			}
+		}
+		state_capitalist_economics = {
+			picture = rom_sentinel_of_motherland2
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_arms_factory_factor = 0.05
+				production_speed_dockyard_factor = 0.05
+				production_speed_industrial_complex_factor = 0.05
+			}
+		}
+		interventionist_economy = {
+			picture = king_carol_emptied_accounts
+			allowed = {
+				always = no
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				production_speed_arms_factory_factor = 0.1
+				production_speed_dockyard_factor = 0.1
+				production_speed_industrial_complex_factor = 0.1
+				political_power_gain = -0.1
+				stability_factor = -0.1
+			}
+		}
+	}
+}
